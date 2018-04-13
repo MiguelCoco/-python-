@@ -157,16 +157,54 @@ IPython:一种交互式计算和开发环境
            In [30]: exec _i27
            Out[30]: 'bar'
  
- 记录输入和输出
-    IPython能够记录整个控制台会话，包括输入和输出。执行%logstart即可开始记录日志：
+    记录输入和输出
+        IPython能够记录整个控制台会话，包括输入和输出。执行%logstart即可开始记录日志：
        
-       %logstart  %logoff  %logon  %lofstate %logstop查看相关文档
+        %logstart  %logoff  %logon  %lofstate %logstop查看相关文档
        
        
-           
-
-
-
+    与操作系统交互
+        IPython跟操作系统的标准shell结合紧密，可以直接在IPython中实现标准的windows或unix命令行活动
+        
+        跟系统相关的IPython魔术命令
+        
+            !cmd                    在系统shell中执行cmd
+            output=!cmd args        执行cmd,并将stdout存放在output中
+            %alias alias_name cmd   为系统shell命令定义别名
+            %bookmark               使用IPython的目录书签系统
+            %cd directory           将系统工作目录改为directory
+            %pwd                    返回系统的当前目录
+            %pushd directory        将当前目录入栈，并转向目标目录
+            %popd                   弹出栈顶目录，并转向该目录
+            %dir                    返回一个含有当前目录栈的列表
+            %dhist                  打印目录访问历史
+            %env                    以dict形式返回系统环境变量
+        
+    shell命令和别名
+        在IPython中，以感叹号（!）开头的命令行表示其后的内容需要在系统shell中执行
+          
+        在ipython中启动python解释器
+            In [1]：!python
+        可以将shell命令的控制台输出存放在变量中
+            linux系统下ip命令
+            ip_info = !ifconfig etho | grep "inet"
+            ip_info[0].strip()
+            
+       %alias可以为shell命令自定义简称
+          %alias alias_name origin_name
+          eg:%alias py python
+          
+          可以一次执行多条命令，只需将它们写在一行上并以分号隔开即可：
+              %alias test ( cd xx; dir xxx)
+              
+    目录书签系统
+        %bookmark db /home/wesm/Dropbox/
+        cd db
+        %bookmark -l 列出所有书签
+        
+    交互式调试器          
+        IPython的调试器增强了pdb
+        调试代码的最佳时机是错误刚刚发生时，%debug命令在发生异常之后马上输入将会调试那个事后调试器，并直接跳到引发异常的那个栈帧（stack frame）
 
 
 
