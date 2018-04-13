@@ -104,11 +104,66 @@ IPython:一种交互式计算和开发环境
         Ctrl + u 删除光标开始到行首字符
         Ctrl + l 清屏
         
+    异常和跟踪
+        %run出现错误时，ipython会输出整个调用占和跟踪（traceback）,并附上上下文代码，上下文代码数量可以通过%xmode魔术命令进行控制
+    
+    魔术命令
+        IPython有一些特殊命令被称为魔术命令，魔术命令是以百分号%为前缀的命令,如：执行时间命令 %timeit
+        魔术命令可以看做是命令行程序，大都有一些命令行选项，使用？可以查看其选项
+        魔术命令默认是可以不带%使用的，只要没有定义与其同名的变量即可，这个技术叫做automagic,可以通过%automagic打开或关闭
+        常用的魔术命令
+            %quickref 显示IPython的快速参考
+            %magic 显示所有魔术命令的详细文档
+            %debug 从最新的异常跟踪的底部进入交互式调试器
+            %hist 打印命令的输入历史
+            %pdb 在异常发生后自动进入调试器
+            %paste 执行剪贴板的python代码
+            %cpaste 打开特殊提示符以便手工粘贴待执行的代码
+            %reset 删除interactive命名空间中的全部变量/名称
+            %page OBJECT 通过分页器打印输出OBJECT
+            %run 运行一个python脚本
+            %time statement 报告statement的执行时间
+            %timeit statement 多次执行statement以计算系综平均执行时间，对那些执行时间非常小的代码很有用
+            %who %who_is %whos 显示interactive命名空间中定义的变量，信息级别/冗余度可变
+            %xdel variable 删除variable,并尝试清楚其在ipython中的对象的一切引用
+          
+    基于QT的富GUI控制台
+        python3.6可以安装pyqt5
+        Qt控制台可以通过标签页的形式启动多个IPython进程，可以让你在多个任务之间轻松切换
+        
+  
+    matplotlib集成与pylab模式
+        IPython能和matplotlib这样的库和GUI工具集默契配合，标准python shell不能，所以ipython广泛用于科学计算领域
         
 
-
-
-
+    搜索并使用历史命令
+    
+    输入和输出变量
+        输出
+            IPython会将输入和输出的引用保存在一些特殊变量中，最近的两个输出结果会保存在“_”和“__”变量中
+        输入
+            输入的文本会被保存在名为_iX的变量中，其中X是输入行的行号。输入变量对应的输出变量_X
+            In [26]: foo = 'bar'
+            
+            In [27]: foo
+            Out[27]: 'bar'
+            
+            In [28]:_i27
+            Out[28]:u'foo'
+            
+            In [29]:_27
+            Out[29]: 'bar'
+           由于输入变量是字符串，因此可以用python的exec关键字重新执行：
+           In [30]: exec _i27
+           Out[30]: 'bar'
+ 
+ 记录输入和输出
+    IPython能够记录整个控制台会话，包括输入和输出。执行%logstart即可开始记录日志：
+       
+       %logstart  %logoff  %logon  %lofstate %logstop查看相关文档
+       
+       
+           
 
 
 
