@@ -205,8 +205,24 @@ IPython:一种交互式计算和开发环境
     交互式调试器          
         IPython的调试器增强了pdb
         调试代码的最佳时机是错误刚刚发生时，%debug命令在发生异常之后马上输入将会调试那个事后调试器，并直接跳到引发异常的那个栈帧（stack frame）
-
-
+        %debug
+        ipdb>u/d 
+        u错误级别上升，d错误级别下降
+        
+        ipython调试器命令
+            h(help)             显示命令列表
+            help command        显示command的文档
+            c(continue)         恢复程序的执行
+            q(quit)             退出调试器，不在执行任何代码
+            b(break)number      在当前文件的第number行设置断点
+            s(tep)              单步进入函数调用
+            n(ext)              执行当前行，并前进到当前级别的下一行
+            a(rgs)              显示当前函数的参数
+            .
+            .
+            .
+            
+        
 
 
 
