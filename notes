@@ -77,10 +77,34 @@ IPython:一种交互式计算和开发环境
         
         ？搜索IPython命名空间
 
+    
+    %run命令运行.py文件
+        %run my_test.py
+     
+    ctrl + C 中断正在运行的程序
+        ctrl + C引发一个Keyboardinterrupt
+        
+    执行剪贴板中的代码
+        linux  ctrl+shift+v粘贴
+        windows 右键粘贴
+        注意！IPython粘贴模式是在IPython中逐行输入代码，换行符会被处理为<return>，如果你粘贴有空行的代码，IPython会认为在空行处结束缩进，引出IndentionError
 
-
-
-
+        %paste 承载剪贴板中的一切文本
+        
+        %cpaste 承载剪贴板中的一切文本，提供提示符，可以连续粘贴并修改代码片段，ctrl+c可终止粘贴
+        
+    键盘上的快捷键
+        Ctrl + p 向上搜索历史文本
+        Ctrl + n 向下搜索历史文本
+        Ctrl + a 移动光标到行首
+        Ctrl + e 移动光标到行尾
+        Ctrl + f 向前移动一个字符
+        Ctrl + b 向后移动一个字符
+        Ctrl + k 删除光标开始到行尾字符
+        Ctrl + u 删除光标开始到行首字符
+        Ctrl + l 清屏
+        
+        
 
 
 
