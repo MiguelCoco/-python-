@@ -232,8 +232,20 @@ IPython:一种交互式计算和开发环境
         %prun 格式和cProfile差不多，它分析的是python语句而不是整个.py文件
             %prun -l 7 -s cumulative xxxxxxxxxx
         %run -p -s cumulative xxxx.py
+    
+    IPython HTML Notebook
+        jupyter notebook
+    
+    IPython个性化和配置（ipython_config.py中）
+        修改颜色方案
+        修改输入输出提示符
+        去掉out提示符跟下一个In提示符之间的空行
+        执行任意python语句
+        启用IPython扩展，如line_profiler中的魔术命令%lprun
+        定义自己的魔术或系统命名
         
-
+        
+   
 
 
 
