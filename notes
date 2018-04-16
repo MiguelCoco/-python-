@@ -222,6 +222,16 @@ IPython:一种交互式计算和开发环境
             .
             .
             
+     测试代码的执行时间：%time和%timeit
+        %time函数，执行一次的时间
+        %timeit函数，执行时间的平均值
+       
+     基本性能分析：%run和%run -p
+        cProfile在执行一个程序或代码块时，会记录各函数所耗费的时间
+            python -m cProfile -s xxxx.py
+        %prun 格式和cProfile差不多，它分析的是python语句而不是整个.py文件
+            %prun -l 7 -s cumulative xxxxxxxxxx
+        %run -p -s cumulative xxxx.py
         
 
 
